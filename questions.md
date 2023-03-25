@@ -1,7 +1,9 @@
 1. What is the difference between Component and PureComponent? give an example where it might break my app.
+
 A `Component` in React is a reusable piece of UI that can receive input data from its parent component (via props) and can also maintain its own internal state. A `PureComponent` is a component that only renders based on it's props, always returning the same output for the same input. The `PureComponent` can help improve performance vy reducing unecessary re-renders.
 
 2. Context + ShouldComponentUpdate might be dangerous. Can think of why is that?
+ 
 If we implement a `Context` within a `shouldComponentUpdate` in a child component that depends on it's value, we'll prevent it from re-rendering when context value changes. That can lead to various bugs within the application, since depending in what you choose to put inside `shouldComponentUpdate` it can prevent the view to update.
 
 3. Describe 3 ways to pass information from a component to its PARENT.
@@ -14,6 +16,7 @@ If we implement a `Context` within a `shouldComponentUpdate` in a child componen
   2. Use `PureComponent`.
 
 5. What is a fragment and why do we need it? Give an example where it might break my app.
+
 It is simply a way to group element without adding additional wraping on DOM, allowing to return multiple elements without needing to put them under a `<div></div>`, for example. We need it to avoid unecessary DOM elements when we need to wrap multiple elements (due jsx result after conversion to object), improve readability (grouping elements logically), prevent conflicts when using hight order components.
 
 6. Give 3 examples of the HOC pattern.
@@ -55,4 +58,5 @@ It is simply a way to group element without adding additional wraping on DOM, al
   And lots of others... Vite supports CSS modules which I used on this project.
 
 11. How to render an HTML string coming from the server
+
 We can use a library called `html-react-parser` which converts this HTML string to JSX. With this tool it's also possible to customize how the HTML is parsed, preserving or discarding some HTML tags, removing empty tags or attributes. In addition, before parsing this data we can Sanitize the HTML string using `dompurify` library.
