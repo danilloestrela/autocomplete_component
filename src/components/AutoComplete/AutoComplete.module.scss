@@ -1,0 +1,14 @@
+.searchBox {
+  width: 24.5rem;
+  position: relative;
+  input {
+    min-width: 24.5rem;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 0.5rem 0.625rem;
+    &.hasResults {
+      border-end-end-radius: 0;
+      border-end-start-radius: 0;
+    }
+  }
+}
