@@ -1,0 +1,45 @@
+.autoCompleteList {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  max-height: 12.5rem;
+  overflow-y: scroll;
+  border-end-end-radius: 4px;
+  border-end-start-radius: 4px;
+  border: 1px solid;
+  border-top: none;
+
+  li {
+    width: 100%;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    user-select: none;
+    cursor: pointer;
+
+    &.active {
+      background: #0284c7;
+      color: #f3f4f6;
+    }
+
+    &:hover {
+      background: #0284c7;
+      color: #f3f4f6;
+    }
+  }
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+.emptyResults {
+  width: 100%;
+  max-height: 12.5rem;
+  text-align: center; 
+  padding: 0.5rem;
+  position: absolute;
+  span {
+    color: red;
+    font-weight: 600;
+  }
+}
